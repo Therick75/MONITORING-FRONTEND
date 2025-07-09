@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Aula 101",
+    "camera": "rtsp://192.168.1.101:554/stream",
+    "isActive": true,
+    "capacity": 30,
+    "description": "Aula principal de matemáticas"
+  },
+  {
+    "id": "2",
+    "name": "Aula 102",
+    "camera": "rtsp://192.168.1.102:554/stream",
+    "isActive": false,
+    "capacity": 25,
+    "description": "Aula de ciencias naturales"
+  },
+  {
+    "id": "3",
+    "name": "Aula 103",
+    "camera": "rtsp://192.168.1.103:554/stream",
+    "isActive": true,
+    "capacity": 28,
+    "description": "Aula de literatura y lenguaje"
+  },
+  {
+    "id": "4",
+    "name": "Laboratorio A",
+    "camera": "rtsp://192.168.1.104:554/stream",
+    "isActive": false,
+    "capacity": 20,
+    "description": "Laboratorio de química y física"
+  }
+]

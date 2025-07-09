@@ -1,0 +1,66 @@
+[
+  {
+    "id": "S01",
+    "name": "María López",
+    "avatar": "/avatars/1.png",
+    "classroomId": "1",
+    "grade": "10A",
+    "email": "maria.lopez@estudiante.edu"
+  },
+  {
+    "id": "S02",
+    "name": "Juan Pérez",
+    "avatar": "/avatars/2.png",
+    "classroomId": "1",
+    "grade": "10A",
+    "email": "juan.perez@estudiante.edu"
+  },
+  {
+    "id": "S03",
+    "name": "Ana García",
+    "avatar": "/avatars/3.png",
+    "classroomId": "1",
+    "grade": "10A",
+    "email": "ana.garcia@estudiante.edu"
+  },
+  {
+    "id": "S04",
+    "name": "Carlos Ruiz",
+    "avatar": "/avatars/4.png",
+    "classroomId": "1",
+    "grade": "10A",
+    "email": "carlos.ruiz@estudiante.edu"
+  },
+  {
+    "id": "S05",
+    "name": "Laura Martín",
+    "avatar": "/avatars/5.png",
+    "classroomId": "1",
+    "grade": "10A",
+    "email": "laura.martin@estudiante.edu"
+  },
+  {
+    "id": "S06",
+    "name": "Diego Fernández",
+    "avatar": "/avatars/1.png",
+    "classroomId": "2",
+    "grade": "10B",
+    "email": "diego.fernandez@estudiante.edu"
+  },
+  {
+    "id": "S07",
+    "name": "Sofia Morales",
+    "avatar": "/avatars/2.png",
+    "classroomId": "2",
+    "grade": "10B",
+    "email": "sofia.morales@estudiante.edu"
+  },
+  {
+    "id": "S08",
+    "name": "Andrés Silva",
+    "avatar": "/avatars/3.png",
+    "classroomId": "3",
+    "grade": "11A",
+    "email": "andres.silva@estudiante.edu"
+  }
+]
