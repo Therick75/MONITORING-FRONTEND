@@ -18,12 +18,11 @@ export default function DashboardLayout({ children, title }: DashboardLayoutProp
     setSidebarOpen(!sidebarOpen);
   };
 
-  // Close sidebar on mobile when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const sidebar = document.getElementById('sidebar');
       const menuButton = document.getElementById('menu-button');
-      
+
       if (
         sidebarOpen &&
         sidebar &&
@@ -46,23 +45,25 @@ export default function DashboardLayout({ children, title }: DashboardLayoutProp
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen bg-gray-50">
-        {/* Sidebar */}
-        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        
-        {/* Mobile sidebar overlay */}
+      <div className="flex min-h-screen bg-gray-50">
+        {/* Sidebar - Fijo */}
+        <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />
+
+        {/* Mobile overlay */}
         {sidebarOpen && (
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-            onClick={() => setSidebarOpen(false)}
+          <div
+            className="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden"
+            onClick={toggleSidebar}
           />
         )}
 
-        {/* Main content */}
-        <div className="lg:pl-64">
+        {/* Main Content Area */}
+        <div className="flex-1 flex flex-col min-h-screen ">
+          {/* Header fijo arriba */}
           <Header onMenuToggle={toggleSidebar} title={title} />
-          
-          <main className="p-6">
+
+          {/* Página */}
+          <main className="flex-1 p-6">
             {children}
           </main>
         </div>
@@ -70,4 +71,3 @@ export default function DashboardLayout({ children, title }: DashboardLayoutProp
     </ProtectedRoute>
   );
 }
-

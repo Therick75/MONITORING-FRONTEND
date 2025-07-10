@@ -16,7 +16,7 @@ export default function ProtectedRoute({ children, requireAuth = true }: Protect
   useEffect(() => {
     if (!loading) {
       if (requireAuth && !isAuthenticated) {
-        router.push('/settings');
+        router.push('/login');
       } else if (!requireAuth && isAuthenticated) {
         router.push('/');
       }
