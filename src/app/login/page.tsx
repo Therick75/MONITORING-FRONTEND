@@ -17,8 +17,17 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await login(email, password);
-      router.push('/intranet');
+      const response = await login(email, password);
+      // devuelve role ejemplo Admin, Teacher, Student
+      if (response.role === 'ADMIN') {
+        router.push('/intranet/admin/dashboard');
+      } else if (response.role === 'TEACHER') {
+        router.push('/intranet/teacher/dashboard');
+      } else if (response.role === 'STUDENT') {
+        router.push('/intranet/student/dashboard');
+      } else {
+        toast.error('Rol no reconocido. Por favor, contacta al administrador.');
+      }
     } catch (err) {
       // Error is handled by the hook
       toast.error('Error al iniciar sesión. Verifica tus credenciales.');

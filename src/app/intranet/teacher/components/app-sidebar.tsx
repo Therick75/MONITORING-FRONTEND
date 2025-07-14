@@ -50,22 +50,22 @@ const data = {
   projects: [
     {
       name: "dashboard",
-      url: "/intranet/dashboard",
+      url: "/intranet/teacher/dashboard",
       icon: Frame,
     },
     {
       name: "Reportes",
-      url: "/intranet/reports",
+      url: "/intranet/teacher/reports",
       icon: PieChart,
     },
     {
       name: "Aulas",
-      url: "/intranet/classrooms",
+      url: "/intranet/teacher/classrooms",
       icon: Map,
     },
     {
       name: "Configuración",
-      url: "/intranet/settings",
+      url: "/intranet/teacher/settings",
       icon: Map,
     },
   ],

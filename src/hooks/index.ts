@@ -230,6 +230,7 @@ export const useAuth = () => {
         api.authApi.login(email, password)
       );
       setUser(userData);
+      return userData;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error during login');
       throw err;
