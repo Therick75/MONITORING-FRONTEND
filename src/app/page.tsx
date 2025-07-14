@@ -3,6 +3,7 @@
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import StatsCard from '@/components/dashboard/StatsCard';
 import VideoMonitor from '@/components/dashboard/VideoMonitor';
+import VideoMonitorPy from '@/components/dashboard/VideoMonitorPy';
 import StudentsList from '@/components/dashboard/StudentsList';
 import { FiUsers, FiEye, FiAlertTriangle, FiTrendingUp } from 'react-icons/fi';
 
@@ -44,7 +45,7 @@ const mockAttentionData = [
     id: 4,
     timestamp: '2024-05-15T09:30:00Z',
     studentId: 'S04',
-    behavior: 'sleepy' as const,
+    behavior: 'raising-hand' as const,
     emotion: 'sad' as const,
     score: 35
   },
@@ -87,7 +88,6 @@ export default function Dashboard() {
             value={`${averageAttention}%`}
             icon={<FiEye className="w-6 h-6" />}
             color="success"
-            trend={{ value: 5.2, isPositive: true }}
           />
           
           <StatsCard
@@ -110,7 +110,8 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Video Section */}
           <div className="lg:col-span-2">
-            <VideoMonitor classroomName="Aula 101" isLive={true} />
+            {/*<VideoMonitor classroomName="Aula 101" isLive={true} />*/}
+            <VideoMonitorPy classroomName="Aula 101" isLive={true} />
           </div>
 
           {/* Students Panel */}

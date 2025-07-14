@@ -114,8 +114,8 @@ export default function ClassroomModal({ isOpen, onClose, onSave, classroom }: C
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
-                <FiMonitor className="w-5 h-5 text-primary-600" />
+              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <FiMonitor className="w-5 h-5 text-blue-600" />
               </div>
               <h3 className="text-lg font-medium text-gray-900">
                 {classroom ? 'Editar Aula' : 'Agregar Nueva Aula'}
@@ -140,7 +140,7 @@ export default function ClassroomModal({ isOpen, onClose, onSave, classroom }: C
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${
+                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-primary-500 ${
                   errors.name ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="Ej: Aula 101"
@@ -160,7 +160,7 @@ export default function ClassroomModal({ isOpen, onClose, onSave, classroom }: C
                   type="text"
                   value={formData.camera}
                   onChange={(e) => handleInputChange('camera', e.target.value)}
-                  className={`w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${
+                  className={`w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-primary-500 ${
                     errors.camera ? 'border-red-300' : 'border-gray-300'
                   }`}
                   placeholder="rtsp://192.168.1.100:554/stream"
@@ -184,7 +184,7 @@ export default function ClassroomModal({ isOpen, onClose, onSave, classroom }: C
                 value={formData.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
                 rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Descripción adicional del aula..."
               />
             </div>
@@ -200,7 +200,7 @@ export default function ClassroomModal({ isOpen, onClose, onSave, classroom }: C
                 max="100"
                 value={formData.capacity}
                 onChange={(e) => handleInputChange('capacity', parseInt(e.target.value) || 0)}
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${
+                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-blue-500 ${
                   errors.capacity ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="30"
@@ -222,7 +222,7 @@ export default function ClassroomModal({ isOpen, onClose, onSave, classroom }: C
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors ${
+                className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors ${
                   isLoading ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >

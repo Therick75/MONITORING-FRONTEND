@@ -32,16 +32,16 @@ export default function ClassroomCard({ classroom, onToggleStatus, onEdit, onDel
 
   const getStatusColor = () => {
     if (classroom.isActive) {
-      return 'bg-success-100 text-success-800 border-success-200';
+      return 'bg-blue-100 text-blue-800 border-blue-200';
     }
     return 'bg-gray-100 text-gray-800 border-gray-200';
   };
 
   const getAttentionColor = (score?: number) => {
     if (!score) return 'text-gray-500';
-    if (score >= 80) return 'text-success-600';
-    if (score >= 60) return 'text-warning-600';
-    return 'text-danger-600';
+    if (score >= 80) return 'text-green-600';
+    if (score >= 60) return 'text-yellow-600';
+    return 'text-red-600';
   };
 
   return (
@@ -51,10 +51,10 @@ export default function ClassroomCard({ classroom, onToggleStatus, onEdit, onDel
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-              classroom.isActive ? 'bg-primary-100' : 'bg-gray-100'
+              classroom.isActive ? 'bg-blue-100' : 'bg-gray-100'
             }`}>
               <FiMonitor className={`w-6 h-6 ${
-                classroom.isActive ? 'text-primary-600' : 'text-gray-400'
+                classroom.isActive ? 'text-blue-600' : 'text-gray-400'
               }`} />
             </div>
             <div>
@@ -112,8 +112,8 @@ export default function ClassroomCard({ classroom, onToggleStatus, onEdit, onDel
         {/* Status indicator */}
         <div className="mb-4">
           {classroom.isActive ? (
-            <div className="flex items-center space-x-2 text-success-600">
-              <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+            <div className="flex items-center space-x-2 text-blue-600">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               <span className="text-sm font-medium">Monitoreo en tiempo real</span>
             </div>
           ) : (
@@ -149,7 +149,7 @@ export default function ClassroomCard({ classroom, onToggleStatus, onEdit, onDel
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${
               classroom.isActive
                 ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                : 'bg-success-100 text-success-700 hover:bg-success-200'
+                : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
             } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             {isLoading ? (

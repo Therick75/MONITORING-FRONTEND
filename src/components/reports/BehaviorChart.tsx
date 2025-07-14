@@ -32,19 +32,27 @@ interface BehaviorChartProps {
 export default function BehaviorChart({ data, title = "Comportamientos Más Frecuentes" }: BehaviorChartProps) {
   const behaviorLabels: { [key: string]: string } = {
     focused: 'Enfocado',
-    distracted: 'Distraído',
-    sleepy: 'Somnoliento',
-    engaged: 'Participativo',
-    confused: 'Confundido',
+    raising_hand: 'levanta la mano',
+    reading_book: 'Leyendo',
+    bored: 'Aburrido',
+    laughing: 'Riendo',
+    using_phone: 'Usando el teléfono',
+    thinking: 'Pensando',
+    writing: 'Escribiendo',
+    food: 'Comiendo',
+  };
+  const behaviorColors: { [key: string]: { bg: string; border: string } } = {
+    focused: { bg: 'rgba(34, 197, 94, 0.8)', border: 'rgb(34, 197, 94)' },           // Green
+    raising_hand: { bg: 'rgba(59, 130, 246, 0.8)', border: 'rgb(59, 130, 246)' },    // Blue
+    reading_book: { bg: 'rgba(13, 148, 136, 0.8)', border: 'rgb(13, 148, 136)' },    // Teal
+    bored: { bg: 'rgba(249, 115, 22, 0.8)', border: 'rgb(249, 115, 22)' },           // Orange
+    laughing: { bg: 'rgba(132, 204, 22, 0.8)', border: 'rgb(132, 204, 22)' },        // Lime
+    using_phone: { bg: 'rgba(239, 68, 68, 0.8)', border: 'rgb(239, 68, 68)' },       // Red
+    thinking: { bg: 'rgba(234, 179, 8, 0.8)', border: 'rgb(234, 179, 8)' },          // Yellow
+    writing: { bg: 'rgba(168, 85, 247, 0.8)', border: 'rgb(168, 85, 247)' },         // Purple
+    food: { bg: 'rgba(236, 72, 153, 0.8)', border: 'rgb(236, 72, 153)' },            // Pink
   };
 
-  const behaviorColors: { [key: string]: { bg: string; border: string } } = {
-    focused: { bg: 'rgba(34, 197, 94, 0.8)', border: 'rgb(34, 197, 94)' },
-    distracted: { bg: 'rgba(245, 158, 11, 0.8)', border: 'rgb(245, 158, 11)' },
-    sleepy: { bg: 'rgba(239, 68, 68, 0.8)', border: 'rgb(239, 68, 68)' },
-    engaged: { bg: 'rgba(59, 130, 246, 0.8)', border: 'rgb(59, 130, 246)' },
-    confused: { bg: 'rgba(168, 85, 247, 0.8)', border: 'rgb(168, 85, 247)' },
-  };
 
   const chartData = {
     labels: data.map(item => behaviorLabels[item.behavior] || item.behavior),

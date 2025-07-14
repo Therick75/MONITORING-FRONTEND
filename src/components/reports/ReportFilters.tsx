@@ -72,7 +72,7 @@ export default function ReportFilters({ onFiltersChange, onExport, onRefresh }: 
           </button>
           <button
             onClick={onExport}
-            className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+            className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-black rounded-lg hover:bg-primary-700 transition-colors"
           >
             <FiDownload className="w-4 h-4" />
             <span>Exportar</span>

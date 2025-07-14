@@ -28,10 +28,14 @@ export default function DataTable({ data, title = "Datos Históricos Detallados"
 
   const behaviorLabels: { [key: string]: string } = {
     focused: 'Enfocado',
-    distracted: 'Distraído',
-    sleepy: 'Somnoliento',
-    engaged: 'Participativo',
-    confused: 'Confundido',
+    raising_hand: 'levanta la mano',
+    reading_book: 'Leyendo',
+    bored: 'Aburrido',
+    laughing: 'Riendo',
+    using_phone: 'Usando el teléfono',
+    thinking: 'Pensando',
+    writing: 'Escribiendo',
+    food: 'Comiendo',
   };
 
   const emotionLabels: { [key: string]: string } = {
@@ -40,7 +44,6 @@ export default function DataTable({ data, title = "Datos Históricos Detallados"
     sad: 'Triste',
     angry: 'Enojado',
     surprised: 'Sorprendido',
-    confused: 'Confundido',
   };
 
   const emotionEmojis: { [key: string]: string } = {
@@ -49,24 +52,23 @@ export default function DataTable({ data, title = "Datos Históricos Detallados"
     sad: '😢',
     angry: '😠',
     surprised: '😲',
-    confused: '😕',
   };
 
   const getScoreColor = (score: number) => {
-    if (score >= 80) return 'text-success-600 bg-success-50';
-    if (score >= 60) return 'text-warning-600 bg-warning-50';
-    return 'text-danger-600 bg-danger-50';
+    if (score >= 80) return 'text-green-600 bg-green-50';
+    if (score >= 60) return 'text-yellow-600 bg-yellow-50';
+    return 'text-red-600 bg-red-50';
   };
 
   const getBehaviorColor = (behavior: string) => {
     switch (behavior) {
       case 'focused':
       case 'engaged':
-        return 'text-success-700 bg-success-100';
+        return 'text-green-700 bg-green-100';
       case 'distracted':
-        return 'text-warning-700 bg-warning-100';
+        return 'text-yellow-700 bg-yellow-100';
       case 'sleepy':
-        return 'text-danger-700 bg-danger-100';
+        return 'text-red-700 bg-red-100';
       default:
         return 'text-gray-700 bg-gray-100';
     }
@@ -142,7 +144,7 @@ export default function DataTable({ data, title = "Datos Históricos Detallados"
           </div>
           <button
             onClick={exportData}
-            className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+            className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             <FiDownload className="w-4 h-4" />
             <span>Exportar CSV</span>

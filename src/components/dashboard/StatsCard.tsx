@@ -5,6 +5,7 @@ interface StatsCardProps {
   value: string | number;
   icon: ReactNode;
   color: 'primary' | 'success' | 'warning' | 'danger';
+  //color: 'primary' | 'success' | 'warning' | 'danger';
   trend?: {
     value: number;
     isPositive: boolean;
@@ -13,24 +14,24 @@ interface StatsCardProps {
 
 const colorClasses = {
   primary: {
-    bg: 'bg-primary-100',
-    text: 'text-primary-600',
-    border: 'border-primary-200'
+    bg: 'bg-blue-100',
+    text: 'text-blue-600',
+    border: 'border-blue-200'
   },
   success: {
-    bg: 'bg-success-100',
-    text: 'text-success-600',
-    border: 'border-success-200'
+    bg: 'bg-green-100',
+    text: 'text-green-600',
+    border: 'border-green-200'
   },
   warning: {
-    bg: 'bg-warning-100',
-    text: 'text-warning-600',
-    border: 'border-warning-200'
+    bg: 'bg-yellow-100',
+    text: 'text-yellow-600',
+    border: 'border-yellow-200'
   },
   danger: {
-    bg: 'bg-danger-100',
-    text: 'text-danger-600',
-    border: 'border-danger-200'
+    bg: 'bg-red-100',
+    text: 'text-red-600',
+    border: 'border-red-200'
   }
 };
 
@@ -53,7 +54,7 @@ export default function StatsCard({ title, value, icon, color, trend }: StatsCar
             <p className="text-2xl font-semibold text-gray-900">{value}</p>
             {trend && (
               <span className={`ml-2 text-sm font-medium ${
-                trend.isPositive ? 'text-success-600' : 'text-danger-600'
+                trend.isPositive ? 'text-green-600' : 'text-red-600'
               }`}>
                 {trend.isPositive ? '+' : ''}{trend.value}%
               </span>

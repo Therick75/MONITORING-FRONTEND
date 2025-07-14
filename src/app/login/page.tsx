@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FiUser, FiLock, FiEye, FiEyeOff, FiMonitor } from 'react-icons/fi';
 import { useAuth } from '@/hooks';
+import { toast, Toaster } from 'sonner';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -17,9 +18,10 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       await login(email, password);
-      router.push('/');
+      router.push('/intranet');
     } catch (err) {
       // Error is handled by the hook
+      toast.error('Error al iniciar sesión. Verifica tus credenciales.');
     }
   };
 
@@ -132,7 +134,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? (
                   <div className="flex items-center">
@@ -164,6 +166,7 @@ export default function LoginPage() {
         <div className="text-center text-sm text-gray-500">
           <p>© 2024 EduMonitor. Sistema de monitoreo educativo.</p>
         </div>
+        <Toaster position="bottom-right" />
       </div>
     </div>
   );

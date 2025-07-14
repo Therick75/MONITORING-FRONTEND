@@ -147,8 +147,7 @@ export default function Classrooms() {
     : 0;
 
   return (
-    <DashboardLayout title="Gestión de Aulas">
-      <div className="space-y-6">
+      <div className="space-y-6 ">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
@@ -157,7 +156,7 @@ export default function Classrooms() {
           </div>
           <button
             onClick={handleAddClassroom}
-            className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+            className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             <FiPlus className="w-4 h-4" />
             <span>Agregar Aula</span>
@@ -175,7 +174,7 @@ export default function Classrooms() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <div className="text-center">
               <p className="text-sm text-gray-500">Aulas Activas</p>
-              <p className="text-2xl font-semibold text-success-600">{activeCount}</p>
+              <p className="text-2xl font-semibold text-green-600">{activeCount}</p>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
@@ -187,7 +186,7 @@ export default function Classrooms() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <div className="text-center">
               <p className="text-sm text-gray-500">Atención Promedio</p>
-              <p className="text-2xl font-semibold text-primary-600">{averageAttention}%</p>
+              <p className="text-2xl font-semibold text-blue-600">{averageAttention}%</p>
             </div>
           </div>
         </div>
@@ -203,7 +202,7 @@ export default function Classrooms() {
                   placeholder="Buscar aulas..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
                 <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               </div>
@@ -212,7 +211,7 @@ export default function Classrooms() {
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value as 'all' | 'active' | 'inactive')}
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="all">Todas las aulas</option>
                 <option value="active">Solo activas</option>
@@ -257,7 +256,7 @@ export default function Classrooms() {
             {!searchTerm && statusFilter === 'all' && (
               <button
                 onClick={handleAddClassroom}
-                className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors mx-auto"
+                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors mx-auto"
               >
                 <FiPlus className="w-4 h-4" />
                 <span>Agregar Primera Aula</span>
@@ -274,7 +273,6 @@ export default function Classrooms() {
           classroom={editingClassroom}
         />
       </div>
-    </DashboardLayout>
   );
 }
 

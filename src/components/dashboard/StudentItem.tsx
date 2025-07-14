@@ -6,9 +6,9 @@ interface StudentItemProps {
 }
 
 const getAttentionColor = (score: number) => {
-  if (score >= 80) return 'success';
-  if (score >= 60) return 'warning';
-  return 'danger';
+  if (score >= 80) return 'blue';
+  if (score >= 60) return 'yellow';
+  return 'red';
 };
 
 const getEmotionEmoji = (emotion: string) => {
@@ -21,15 +21,15 @@ const getEmotionEmoji = (emotion: string) => {
 };
 
 const getAttentionStatusColor = (score: number) => {
-  if (score >= 80) return 'bg-success-500';
-  if (score >= 60) return 'bg-warning-500';
-  return 'bg-danger-500';
+  if (score >= 80) return 'bg-blue-500';
+  if (score >= 60) return 'bg-yellow-500';
+  return 'bg-red-500';
 };
 
 const getProgressBarColor = (score: number) => {
-  if (score >= 80) return 'bg-success-500';
-  if (score >= 60) return 'bg-warning-500';
-  return 'bg-danger-500';
+  if (score >= 80) return 'bg-blue-500';
+  if (score >= 60) return 'bg-yellow-500';
+  return 'bg-red-500';
 };
 
 const getAvatarColor = (index: number) => {

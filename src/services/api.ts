@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Student, AttentionData, Classroom } from '@/types';
 
 // API configuration
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3007';
 const PYTHON_API_URL = process.env.NEXT_PUBLIC_PYTHON_API_URL || 'http://localhost:8000';
 
 // Create axios instances
@@ -130,7 +130,7 @@ export const attentionApi = {
     queryParams.append('_order', 'desc');
 
     const response = await jsonServerApi.get(`/attention_data?${queryParams.toString()}`);
-    return response.data;
+    response.data;
   },
 
   // Add new attention data
@@ -167,6 +167,18 @@ export const attentionApi = {
 export const authApi = {
   // Login
   login: async (email: string, password: string): Promise<{ user: any; token: string }> => {
+    try {
+      // Replace with actual API call
+      const response = await jsonServerApi.post('/api/auth/login', { email, password });
+      const { user, token } = response.data;
+      // Store in localStorage
+      localStorage.setItem('auth_token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+      return { user, token };
+    } catch (error:any) {
+      console.error('Login failed:', error);
+      throw new Error(error.response?.data?.message || 'Login failed');
+    }
     // Mock authentication for demo
     if (email === 'admin@edu.com' && password === 'demo123') {
       const user = {

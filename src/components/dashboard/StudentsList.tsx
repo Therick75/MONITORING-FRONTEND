@@ -56,8 +56,8 @@ export default function StudentsList({ students, attentionData, onRefresh }: Stu
           <div className="text-center">
             <p className="text-sm text-gray-500">Atención promedio</p>
             <p className={`text-xl font-semibold ${
-              averageAttention >= 80 ? 'text-success-600' : 
-              averageAttention >= 60 ? 'text-warning-600' : 'text-danger-600'
+              averageAttention >= 80 ? 'text-blue-600' : 
+              averageAttention >= 60 ? 'text-yellow-600' : 'text-red-600'
             }`}>
               {averageAttention}%
             </p>
@@ -65,7 +65,7 @@ export default function StudentsList({ students, attentionData, onRefresh }: Stu
           <div className="text-center">
             <p className="text-sm text-gray-500">Alertas activas</p>
             <p className={`text-xl font-semibold ${
-              lowAttentionCount === 0 ? 'text-success-600' : 'text-danger-600'
+              lowAttentionCount === 0 ? 'text-blue-600' : 'text-red-600'
             }`}>
               {lowAttentionCount}
             </p>

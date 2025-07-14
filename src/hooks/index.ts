@@ -216,7 +216,7 @@ export const useRealTimeData = (classroomId: string | null) => {
   };
 };
 
-// Hook for authentication
+
 export const useAuth = () => {
   const { user, isAuthenticated, setUser, logout: storeLogout } = useAppStore();
   const [loading, setLoading] = useState(false);

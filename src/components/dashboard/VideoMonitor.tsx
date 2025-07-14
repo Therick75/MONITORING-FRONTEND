@@ -31,15 +31,15 @@ export default function VideoMonitor({ classroomName, isLive = true }: VideoMoni
   const [showOverlay, setShowOverlay] = useState(true);
 
   const getBoxColor = (score: number) => {
-    if (score >= 80) return 'border-success-400';
-    if (score >= 60) return 'border-warning-400';
-    return 'border-danger-400';
+    if (score >= 80) return 'border-blue-400';
+    if (score >= 60) return 'border-yellow-400';
+    return 'border-red-400';
   };
 
   const getScoreColor = (score: number) => {
-    if (score >= 80) return 'text-success-400';
-    if (score >= 60) return 'text-warning-400';
-    return 'text-danger-400';
+    if (score >= 80) return 'text-blue-400';
+    if (score >= 60) return 'text-yellow-400';
+    return 'text-red-400';
   };
 
   return (
@@ -145,7 +145,7 @@ export default function VideoMonitor({ classroomName, isLive = true }: VideoMoni
           </div>
           <div>
             <p className="text-sm text-gray-500">Calidad de video</p>
-            <p className="text-lg font-semibold text-success-600">HD</p>
+            <p className="text-lg font-semibold text-blue-600">HD</p>
           </div>
         </div>
       </div>
